@@ -25,8 +25,7 @@ sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
-su rtorrent
-su -c 'mkdir $HOME/.session/ $HOME/rtdl $HOME/.caddy'
+su -c 'mkdir $HOME/.session/ $HOME/rtdl $HOME/.caddy' rtorrent
 
 cd $HOME
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
@@ -36,7 +35,7 @@ cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 chown -R rtorrent:rtorrent /home/rtorrent/rtorrent.rc
 
 # setup rutorrent
-su -c 'git clone https://github.com/Novik/ruTorrent $HOME/ruTorrent' rotrrent
+su -c 'git clone https://github.com/Novik/ruTorrent $HOME/ruTorrent' rtorrent
 
 # Details
 echo "Login Details"
