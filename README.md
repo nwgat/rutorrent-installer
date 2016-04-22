@@ -1,3 +1,6 @@
+~work in progress, help me improve it!~
+
+
 # ruTorrent Installer
 
 * Supervisor for easy control
