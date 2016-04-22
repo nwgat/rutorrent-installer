@@ -1,5 +1,5 @@
 echo "nwgat.ninja rutorrent installer"
-ip='hostname -I'
+ip=`hostname -I`
 
 # Install packages
 apt-get update
