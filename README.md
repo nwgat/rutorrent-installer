@@ -1,4 +1,6 @@
-Supervisor for easy control
-ruTorrent frontend 
-rTorrent torrent client
-caddy web server
+# ruTorrent Installer
+
+* Supervisor for easy control
+* ruTorrent frontend 
+* rTorrent torrent client
+* caddy web server
