@@ -12,7 +12,7 @@ mkdir -p /var/log/supervisor/
 
 cp conf/supervisord.conf /etc/supervisor/supervisord.conf 
 cp conf/caddy.conf /etc/supervisor/conf.d/
-cp conf/rt.conf /etc/supervisor/conf.d/
+cp conf/rtorrent.conf /etc/supervisor/conf.d/
 
 # Install caddy
 wget https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz >> /dev/null
