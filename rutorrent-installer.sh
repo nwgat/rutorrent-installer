@@ -3,7 +3,7 @@ ip=hostname -I
 
 # Install packages
 apt-get update
-apt-get install php7.0-fpm python-pip python3-pip git rtorrent curl wget -y >> /dev/null
+apt-get install php7.0-fpm python-pip python3-pip git rtorrent curl wget -y
 pip install supervisor
 
 # supervisor configs
