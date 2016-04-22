@@ -20,8 +20,8 @@ tar xvf caddy_linux_amd64.tar.gz caddy >> /dev/null
 install caddy /usr/bin
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
-sed '/\exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local
-sed '/\exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local
+sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local -i.bkp
+sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
@@ -41,6 +41,7 @@ su -c 'git clone https://github.com/Novik/ruTorrent $HOME/ruTorrent' rotrrent
 # Details
 echo "Login Details"
 echo ""
+supervisord
 supervisorctl status
 echo ""
 echo "Username: admin"
