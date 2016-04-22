@@ -1,0 +1,8 @@
+:80 {  
+root /home/rtorrent/ruTorrent
+basicauth / user pass  
+browse  
+markdown  
+gzip  
+fastcgi / /var/run/php7-fpm.sock php
+}
