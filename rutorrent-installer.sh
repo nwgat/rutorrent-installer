@@ -7,7 +7,7 @@ read -e pass
 
 # Install packages
 apt-get update
-apt-get install php7.0-fpm python-pip python3-pip git rtorrent curl wget -y
+apt-get install php7.0-fpm python-pip python3-pip git rtorrent -y
 pip install supervisor
 
 # supervisor configs
@@ -47,7 +47,6 @@ supervisord -c /etc/supervisor/supervisord.conf
 # Details
 echo "Login Details"
 echo ""
-wait 5
 supervisorctl status
 echo ""
 echo "Username: $user"
