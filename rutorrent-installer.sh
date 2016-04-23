@@ -1,5 +1,9 @@
 echo "nwgat.ninja rutorrent installer"
 ip=`hostname -I`
+echo "rutorrent Username"
+read -e user
+echo "rutorrent Password"
+read -e pass
 
 # Install packages
 apt-get update
@@ -43,9 +47,9 @@ supervisord -c /etc/supervisor/supervisord.conf
 # Details
 echo "Login Details"
 echo ""
-
+wait 5
 supervisorctl status
 echo ""
-echo "Username: admin"
-echo "Password: admin"
+echo "Username: $user"
+echo "Password: $pass"
 echo "ip: http://$ip"
