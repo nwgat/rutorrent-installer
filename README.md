@@ -1,7 +1,8 @@
 ~work in progress, help me improve it!~
+waiting for caddy to implement [scgi support](https://github.com/mholt/caddy/issues/776)
+
 
 # ruTorrent Installer
-
 * Supervisor for easy control
 * ruTorrent frontend 
 * rTorrent torrent client
