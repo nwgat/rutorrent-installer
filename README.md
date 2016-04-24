@@ -9,6 +9,5 @@
 
 
 # Install
-* wget https://github.com/nwgat/rutorrent-installer/archive/master.zip
-* unzip master.zip && cd rutorrent-installer-master 
+* git clone https://github.com/nwgat/rutorrent-installer.git && cd rutorrent-installer
 * chmod +x ./rutorrent-installer.sh && ./rutorrent-installer.sh
