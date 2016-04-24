@@ -10,5 +10,6 @@ waiting for caddy to implement [scgi support](https://github.com/mholt/caddy/iss
 
 
 # Install
-* git clone https://github.com/nwgat/rutorrent-installer.git && cd rutorrent-installer
-* chmod +x ./rutorrent-installer.sh && ./rutorrent-installer.sh
+* `apt-get install git -y`
+* `git clone https://github.com/nwgat/rutorrent-installer.git && cd rutorrent-installer`
+* `chmod +x ./rutorrent-installer.sh && ./rutorrent-installer.sh`
