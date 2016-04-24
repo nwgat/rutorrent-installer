@@ -8,8 +8,7 @@ read -e pass
 
 # Install packages
 apt-get update
-apt-get install php7.0-fpm python-pip python3-pip git rtorrent curl ffmpeg mediainfo unrar -y
-pip install supervisor
+apt-get install php7.0-fpm supervisor git rtorrent curl ffmpeg mediainfo unrar -y
 
 # supervisor configs
 mkdir -p /etc/supervisor/conf.d/
