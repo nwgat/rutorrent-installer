@@ -28,8 +28,8 @@ useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir $HOME/.session/ $HOME/rtdl $HOME/.caddy' rtorrent
 
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
-sed -e 's/user/$user/' /home/rtorrent/.caddy/Caddyfile -i.bkp
-sed -e 's/pass/$pass/' /home/rtorrent/.caddy/Caddyfile -i.bkp
+sed -e 's/"user"/"$user"/' /home/rtorrent/.caddy/Caddyfile -i.bkp
+sed -e 's/"pass"/"$pass"/' /home/rtorrent/.caddy/Caddyfile -i.bkp
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 chown -R rtorrent:rtorrent /home/rtorrent/.caddy/Caddyfile
 chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
