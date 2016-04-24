@@ -1,4 +1,5 @@
-echo "nwgat.ninja rutorrent installer"
+echo "## nwgat.ninja rutorrent installer ##"
+echo ""
 ip=`hostname -I`
 echo "rutorrent Username"
 read -e user
@@ -7,7 +8,7 @@ read -e pass
 
 # Install packages
 apt-get update
-apt-get install php7.0-fpm python-pip python3-pip git rtorrent -y
+apt-get install php7.0-fpm python-pip python3-pip git rtorrent curl ffmpeg mediainfo unrar -y
 pip install supervisor
 
 # supervisor configs
