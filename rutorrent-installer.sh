@@ -19,7 +19,7 @@ cp conf/caddy.conf /etc/supervisor/conf.d/
 cp conf/rtorrent.conf /etc/supervisor/conf.d/
 
 # Install caddy
-wget https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz >> /dev/null
+wget https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz
 tar xvf caddy_linux_amd64.tar.gz caddy >> /dev/null
 install caddy /usr/bin
 
