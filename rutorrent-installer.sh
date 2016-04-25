@@ -8,7 +8,7 @@ read -e pass
 
 # Install packages
 apt-get update
-apt-get install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip -y
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip -y
 
 # supervisor configs
 mkdir -p /etc/supervisor/conf.d/
@@ -19,7 +19,7 @@ cp conf/caddy.conf /etc/supervisor/conf.d/
 cp conf/rtorrent.conf /etc/supervisor/conf.d/
 
 # Install caddy
-wget https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz
+wget -q https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz -O caddy_linux_amd64.tar.gz
 tar xvf caddy_linux_amd64.tar.gz caddy >> /dev/null
 install caddy /usr/bin
 
