@@ -44,6 +44,10 @@ service php7.0-fpm restart
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local -i.bkp
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
 
+# setup ufw
+ufw --force enable
+ufw allow 80
+ufw allow 6922
 
 # allow caddy for port 80 and start supervisord
 setcap cap_net_bind_service=+ep /usr/bin/caddy
