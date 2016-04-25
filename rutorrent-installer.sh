@@ -48,6 +48,7 @@ sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i
 # allow caddy for port 80 and start supervisord
 setcap cap_net_bind_service=+ep /usr/bin/caddy
 supervisord -c /etc/supervisor/supervisord.conf
+chown -R www-data:www-data /home/rtorrent/
 
 # Details
 echo "Login Details"
