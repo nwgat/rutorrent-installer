@@ -13,8 +13,8 @@ waiting for caddy to implement [scgi support](https://github.com/mholt/caddy/iss
 * ufw enabled
 * ufw opens 80, 443 and 6922
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
-* /home/rtorrent/ruTorrent (webui)
-* /home/rtorrent/rtdl (data)
+* /home/rtorrent/www/ruTorrent (webui)
+* /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile)
 
 **Install**
 * `apt-get install git -y`
