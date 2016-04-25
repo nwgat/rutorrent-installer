@@ -34,13 +34,16 @@ cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 chown -R rtorrent:rtorrent /home/rtorrent/.caddy/Caddyfile
 chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
 
-# ruTorrent
+# ruTorrent & php
 git clone https://github.com/Novik/ruTorrent /home/rtorrent/ruTorrent
 chown -R rtorrent:rtorrent /home/rtorrent/ruTorrent
+usermod -G www-data rtorrent
+service php7.0-fpm restart
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local -i.bkp
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
+
 
 # allow caddy for port 80 and start supervisord
 setcap cap_net_bind_service=+ep /usr/bin/caddy
