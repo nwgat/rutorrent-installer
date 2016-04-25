@@ -53,7 +53,7 @@ ufw allow 6922
 # allow caddy for port 80 and start supervisord
 setcap cap_net_bind_service=+ep /usr/bin/caddy
 supervisord -c /etc/supervisor/supervisord.conf
-chown -R www-data:www-data /home/rtorrent/
+chown -R www-data:rtorrent /home/rtorrent/
 
 # Details
 echo "Login Details"
