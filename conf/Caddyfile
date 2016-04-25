@@ -4,5 +4,5 @@ basicauth / user pass
 browse  
 markdown  
 gzip  
-fastcgi / /var/run/php/php7.0-fpm.sock php
+fastcgi / /run/php/php7.0-fpm.sock php
 }
