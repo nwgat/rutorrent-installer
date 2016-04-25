@@ -52,7 +52,8 @@ sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i
 ufw --force enable > /dev/null
 ufw allow 80
 ufw allow 443
-ufw allow 6922
+ufw allow 55950:56000/tcp
+ufw allow 55950:56000/udp
 echo "Firewall [OK]"
 # allow caddy for port 80
 setcap cap_net_bind_service=+ep /usr/bin/caddy
@@ -76,3 +77,4 @@ echo ""
 echo "Username: $user"
 echo "Password: $pass"
 echo "ip: http://$ip"
+echo ""
