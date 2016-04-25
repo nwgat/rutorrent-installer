@@ -8,7 +8,7 @@ read -e pass
 
 # Install packages
 echo "Installing Packages"
-apt-get update
+apt-get update > /dev/null
 apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y > /dev/null
 
 # supervisor configs
