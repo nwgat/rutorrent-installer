@@ -16,6 +16,10 @@ waiting for caddy to implement [scgi support](https://github.com/mholt/caddy/iss
 * /home/rtorrent/ruTorrent (webui)
 * /home/rtorrent/rtdl (data)
 
+**change password**
+* `passwd rtorrent` (user password, default is disabled)
+* `su rtorrent` and `nano $HOME/.caddy/Caddyfile` (look at line 3)
+
 **Install**
 * `apt-get install git -y`
 * `git clone https://github.com/nwgat/rutorrent-installer.git && cd rutorrent-installer`
@@ -27,3 +31,4 @@ waiting for caddy to implement [scgi support](https://github.com/mholt/caddy/iss
 * `apt-get install git -y`
 * `git clone https://github.com/nwgat/rutorrent-installer.git && cd rutorrent-installer`
 * `chmod +x ./rutorrent-installer.sh && ./rutorrent-installer.sh`
+* 
