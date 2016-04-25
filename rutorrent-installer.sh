@@ -7,6 +7,7 @@ echo "rutorrent Password"
 read -e pass
 
 # Install packages
+echo "Installing Packages"
 apt-get update
 apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y
 
@@ -19,6 +20,7 @@ cp conf/caddy.conf /etc/supervisor/conf.d/
 cp conf/rtorrent.conf /etc/supervisor/conf.d/
 
 # Install caddy
+echo "Installing caddy"
 wget -q https://github.com/mholt/caddy/releases/download/v0.8.2/caddy_linux_amd64.tar.gz -O caddy_linux_amd64.tar.gz
 tar xvf caddy_linux_amd64.tar.gz caddy >> /dev/null
 install caddy /usr/bin
@@ -36,7 +38,8 @@ chown -R rtorrent:rtorrent /home/rtorrent/.caddy/Caddyfile
 chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
 
 # ruTorrent & php
-git clone https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
+echo "installing rutorrent"
+git -q clone https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 chown -R rtorrent:rtorrent /home/rtorrent/www/rutorrent
 usermod -G www-data rtorrent
 service php7.0-fpm restart
@@ -57,6 +60,7 @@ supervisord -c /etc/supervisor/supervisord.conf
 chown -R www-data:rtorrent /home/rtorrent/
 
 # Details
+echo ""
 echo "Login Details"
 echo ""
 supervisorctl status
