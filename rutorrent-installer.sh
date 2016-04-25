@@ -8,7 +8,7 @@ read -e pass
 
 # Install packages
 apt-get update
-apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip -y
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y
 
 # supervisor configs
 mkdir -p /etc/supervisor/conf.d/
