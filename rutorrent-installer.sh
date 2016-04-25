@@ -9,7 +9,7 @@ read -e pass
 # Install packages
 echo "Installing Packages"
 apt-get update
-apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y > /dev/null
 
 # supervisor configs
 mkdir -p /etc/supervisor/conf.d/
@@ -39,7 +39,7 @@ chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
 
 # ruTorrent & php
 echo "installing rutorrent"
-git -q clone https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
+git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 chown -R rtorrent:rtorrent /home/rtorrent/www/rutorrent
 usermod -G www-data rtorrent
 service php7.0-fpm restart
