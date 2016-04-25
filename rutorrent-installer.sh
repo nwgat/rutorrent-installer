@@ -25,7 +25,7 @@ install caddy /usr/bin
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
-su -c 'mkdir $HOME/.session/ $HOME/www/rtdl $HOME/.caddy' rtorrent
+su -c 'mkdir $HOME/.session/ $HOME/.caddy' rtorrent
 su -c 'mkdir -P $HOME/www/rtdl' rtorrent
 
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
