@@ -25,7 +25,7 @@ install caddy /usr/bin
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
-su -c 'mkdir $HOME/.session/ $HOME/rtdl $HOME/.caddy' rtorrent
+su -c 'mkdir $HOME/.session/ $HOME/www/rtdl $HOME/.caddy' rtorrent
 
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
@@ -35,8 +35,8 @@ chown -R rtorrent:rtorrent /home/rtorrent/.caddy/Caddyfile
 chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
 
 # ruTorrent & php
-git clone https://github.com/Novik/ruTorrent /home/rtorrent/ruTorrent
-chown -R rtorrent:rtorrent /home/rtorrent/ruTorrent
+git clone https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
+chown -R rtorrent:rtorrent /home/rtorrent/www/rutorrent
 usermod -G www-data rtorrent
 service php7.0-fpm restart
 
