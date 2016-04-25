@@ -1,8 +1,9 @@
 :80 {  
-root /home/rtorrent/ruTorrent
-basicauth / user pass  
-browse  
-markdown  
-gzip  
-fastcgi / /run/php/php7.0-fpm.sock php
+root /home/rtorrent/www/
+	basicauth / user pass  
+	browse
+	markdown
+	gzip
+	fastcgi / /run/php/php7.0-fpm.sock php
+	rewrite /rtdl { status 403 } 
 }
