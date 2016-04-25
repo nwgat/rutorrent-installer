@@ -34,8 +34,6 @@ cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
-chown -R rtorrent:rtorrent /home/rtorrent/.caddy/Caddyfile
-chown -R rtorrent:rtorrent /home/rtorrent/.rtorrent.rc
 
 # ruTorrent & php
 echo "installing rutorrent"
