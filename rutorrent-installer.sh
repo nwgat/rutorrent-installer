@@ -47,6 +47,7 @@ sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i
 # setup ufw
 ufw --force enable
 ufw allow 80
+ufw allow 443
 ufw allow 6922
 
 # allow caddy for port 80 and start supervisord
