@@ -25,7 +25,7 @@
 * [enable https](https://github.com/mholt/caddy/issues/327) by default (waiting for caddy)
 * [scgi support](https://github.com/mholt/caddy/issues/776) (waiting for caddy)
 
-See Wiki
+**Install (See Wiki)**
 * [Install](https://github.com/nwgat/rutorrent-installer/wiki/Install)
 * [Install in LXC Container](https://github.com/nwgat/rutorrent-installer/wiki/Install-in-a-LXC-Container)
 * [Change pasword](https://github.com/nwgat/rutorrent-installer/wiki/Change-Password)
