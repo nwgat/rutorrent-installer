@@ -12,7 +12,7 @@
 * ufw opens 80, 443 and 6922
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
 * /home/rtorrent/www/ruTorrent (webui)
-* /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile)
+* /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile to allow access to /rtdl)
 
 **Supervisor**
 * supervisorctl status
