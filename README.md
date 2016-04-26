@@ -1,3 +1,6 @@
+a project by
+http://nwgat.ninja
+
 ~work in progress, help me improve it!~
 
 # ruTorrent Installer
