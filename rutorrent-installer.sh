@@ -1,16 +1,17 @@
 #!/bin/bash
 echo ""
 echo "## nwgat.ninja rutorrent installer ##"
+echo "http://nwgat.ninja"
 echo ""
 ip=`hostname -I`
 echo "rutorrent Username"
 read -e user
 echo "rutorrent Password"
 read -e pass
-
+echo ""
 # Install packages
-apt-get update > /dev/null
-apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y > /dev/null
+apt-get update >> /dev/null
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y >> /dev/null
 echo "Packages [OK]"
 
 # supervisor configs
@@ -49,11 +50,11 @@ sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local -i.
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
 
 # setup ufw
-ufw --force enable > /dev/null
-ufw allow 80
-ufw allow 443
-ufw allow 55950:56000/tcp
-ufw allow 55950:56000/udp
+ufw --force enable >> /dev/null
+ufw allow 80 >> /dev/null
+ufw allow 443 >> /dev/null
+ufw allow 55950:56000/tcp >> /dev/null
+ufw allow 55950:56000/udp >> /dev/null
 echo "Firewall [OK]"
 # allow caddy for port 80
 setcap cap_net_bind_service=+ep /usr/bin/caddy
