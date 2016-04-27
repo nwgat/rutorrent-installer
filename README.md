@@ -13,7 +13,6 @@ http://nwgat.ninja
 **Defaults**
 * ufw enabled
 * ufw opens 80, 443 and 55950-56000
-* Self Signed HTTPS/SSL Certificate (change 443 to 80 in .caddy/Caddyfile for http) 
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
 * /home/rtorrent/www/ruTorrent (webui)
 * /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile to allow access to /rtdl)
@@ -26,10 +25,11 @@ http://nwgat.ninja
 
 **TODO**
 * fix curl not found
-* better [https](https://github.com/mholt/caddy/issues/327) by default (waiting for caddy)
+* [https support](https://github.com/mholt/caddy/issues/327) by default (waiting for caddy)
 * [scgi support](https://github.com/mholt/caddy/issues/776) (waiting for caddy)
 
 **Install (See Wiki)**
 * [Install](https://github.com/nwgat/rutorrent-installer/wiki/Install)
 * [Install in LXC Container](https://github.com/nwgat/rutorrent-installer/wiki/Install-in-a-LXC-Container)
 * [Change pasword](https://github.com/nwgat/rutorrent-installer/wiki/Change-Password)
+* [Enable https]()
