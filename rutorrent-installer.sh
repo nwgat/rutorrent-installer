@@ -32,7 +32,7 @@ echo "Caddy [OK]"
 useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir $HOME/.session/ $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/www/rtdl' rtorrent
-su -c 'openssl req -new -newkey rsa:4096 -sha256 -days 365 -nodes -x509 -keyout $HOME/.caddy/cert.key -out $HOME/.caddy/cert.crt -subj "/C=GB/ST=rutorrent/L=rutorrent/O=rutorrent/OU=rutorrent/CN=rutorrent"' rtorrent
+
 chown -R rtorrent /home/rtorrent/.session
 chown -R rtorrent /home/rtorrent/.caddy
 chown -R rtorrent /home/rtorrent/www/
