@@ -32,4 +32,4 @@ http://nwgat.ninja
 * [Install](https://github.com/nwgat/rutorrent-installer/wiki/Install)
 * [Install in LXC Container](https://github.com/nwgat/rutorrent-installer/wiki/Install-in-a-LXC-Container)
 * [Change pasword](https://github.com/nwgat/rutorrent-installer/wiki/Change-Password)
-* [Enable https]()
+* [Enable https](https://github.com/nwgat/rutorrent-installer/wiki/Enable-https)
