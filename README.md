@@ -13,7 +13,7 @@ http://nwgat.ninja
 **Defaults**
 * ufw enabled
 * ufw opens 80, 443 and 55950-56000
-* Auto Generate SSL Certificate (change 80 in .caddy/Caddyfile for non-ssl) 
+* Self Signed HTTPS/SSL Certificate (change 80 to 443 in .caddy/Caddyfile for https) 
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
 * /home/rtorrent/www/ruTorrent (webui)
 * /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile to allow access to /rtdl)
