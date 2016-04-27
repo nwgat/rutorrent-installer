@@ -6,4 +6,5 @@ root /home/rtorrent/www/
 	gzip
 	fastcgi / /run/php/php7.0-fpm.sock php
 	rewrite /rtdl { status 403 } 
+	tls cert.crt cert.key
 }
