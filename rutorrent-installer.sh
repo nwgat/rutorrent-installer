@@ -64,6 +64,7 @@ setcap cap_net_bind_service=+ep /usr/bin/caddy
 usermod -a -G www-data rtorrent
 chown -R www-data:rtorrent /home/rtorrent
 chmod -R u=rwx,g=rwx /home/rtorrent/
+chmod -R u=rwx,g=rwx /home/rtorrent/.caddy/
 
 # start services
 service php7.0-fpm restart
