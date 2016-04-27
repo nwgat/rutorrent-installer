@@ -78,5 +78,5 @@ supervisorctl status
 echo ""
 echo "Username: $user"
 echo "Password: $pass"
-echo "ip: http://$ip"
+echo "ip: https://$ip"
 echo ""
