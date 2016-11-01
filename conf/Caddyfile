@@ -10,6 +10,7 @@ root /home/rtorrent/www/
             allow          dotfiles
 }
         tls self_signed
+        browse
         markdown
         gzip
         fastcgi / /run/php/php7.0-fpm.sock php
