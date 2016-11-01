@@ -45,7 +45,7 @@ git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 echo "ruTorrent [OK]"
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
-sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/bin/caddy' /etc/rc.local -i.bkp
+sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/local/bin/caddy' /etc/rc.local -i.bkp
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
 
 # setup ufw
@@ -56,7 +56,7 @@ ufw allow 55950:56000/tcp >> /dev/null
 ufw allow 55950:56000/udp >> /dev/null
 echo "Firewall [OK]"
 # allow caddy for port 80
-setcap cap_net_bind_service=+ep /usr/bin/caddy
+setcap cap_net_bind_service=+ep /usr/local/bin/caddy
 
 # premisison hell
 usermod -a -G www-data rtorrent
