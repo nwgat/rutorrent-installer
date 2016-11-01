@@ -53,7 +53,7 @@ chmod -R u=rwx,g=rwx /home/rtorrent/
 
 # flexget
 su -c 'crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -' rtorrent
-echo "Flexget [OK]
+echo "Flexget [OK]"
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/local/bin/caddy' /etc/rc.local -i.bkp
