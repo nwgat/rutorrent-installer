@@ -11,7 +11,7 @@ read -e pass
 echo ""
 # Install packages
 apt-get update >> /dev/null
-apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y >> /dev/null
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw python-pip -y >> /dev/null
 echo "Packages [OK]"
 
 # supervisor configs
@@ -32,9 +32,11 @@ useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
+su -c 'mkdir -p $HOME/.config/flexget/' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
 chown -R rtorrent /home/rtorrent/.caddy
+chown -R rtorrent /home/rtorrent/.config/flexget
 chown -R rtorrent /home/rtorrent/www/
 
 # premisison hell
