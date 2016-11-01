@@ -1,5 +1,5 @@
 : {
-root /home/user/www/
+root /home/rtorrent/www/
         basicauth / user pass
         filemanager /rtdl {
             show /rtdl
