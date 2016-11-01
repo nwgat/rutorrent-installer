@@ -35,11 +35,6 @@ su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/.config/flexget/' rtorrent
 
-chown -R rtorrent /home/rtorrent/.session
-chown -R rtorrent /home/rtorrent/.caddy
-chown -R rtorrent /home/rtorrent/.config/flexget
-chown -R rtorrent /home/rtorrent/www/
-
 # configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
@@ -48,7 +43,13 @@ cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
-# premisison hell
+# permission hell
+
+chown -R rtorrent /home/rtorrent/.session
+chown -R rtorrent /home/rtorrent/.caddy
+chown -R rtorrent /home/rtorrent/.config/flexget
+chown -R rtorrent /home/rtorrent/www/
+
 usermod -a -G www-data rtorrent
 chown -R www-data:rtorrent /home/rtorrent
 chmod -R u=rwx,g=rwx /home/rtorrent/www
