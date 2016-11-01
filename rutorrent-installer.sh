@@ -50,8 +50,7 @@ sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i
 
 # setup ufw
 ufw --force enable >> /dev/null
-ufw allow 80 >> /dev/null
-ufw allow 443 >> /dev/null
+ufw allow 2015 >> /dev/null
 ufw allow 55950:56000/tcp >> /dev/null
 ufw allow 55950:56000/udp >> /dev/null
 echo "Firewall [OK]"
@@ -77,5 +76,5 @@ supervisorctl status
 echo ""
 echo "Username: $user"
 echo "Password: $pass"
-echo "ip: http://$ip"
+echo "ip: http://$ip:2015"
 echo ""
