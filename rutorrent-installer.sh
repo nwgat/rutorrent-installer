@@ -9,10 +9,9 @@ read -e user
 echo "rutorrent Password"
 read -e pass
 echo ""
-
 # Install packages
 apt-get update >> /dev/null
-apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw python-pip -y >> /dev/null
+apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw -y >> /dev/null
 echo "Packages [OK]"
 
 # supervisor configs
@@ -31,36 +30,32 @@ echo "Caddy [OK]"
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
-su -c 'mkdir -p $HOME/.config/caddy' rtorrent
-su -c 'mkdir -p $HOME/.config/flexget' rtorrent
+su -c 'mkdir -p $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
-su -c 'mkdir -p $HOME/www' rtorrent
+
+chown -R rtorrent /home/rtorrent/.session
+chown -R rtorrent /home/rtorrent/.caddy
+chown -R rtorrent /home/rtorrent/www/
+
+# premisison hell
+usermod -a -G www-data rtorrent
+chown -R www-data:rtorrent /home/rtorrent
+chmod -R u=rwx,g=rwx /home/rtorrent/www
 
 # configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
-cp conf/Caddyfile /home/rtorrent/.config/caddy/Caddyfile
-cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
-sed -e "s/"user"/"$user"/g" /home/rtorrent/.config/caddy/Caddyfile -i.bkp
-sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.config/caddy/Caddyfile -i.bkp
+cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
+sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
+sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
 # ruTorrent & php
 git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 echo "ruTorrent [OK]"
 
-# flexget
-pip install flexget >> /dev/null
-crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -
-
 # small fixes like starting supvisor on startup and caddy on port 80/443
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/local/bin/caddy' /etc/rc.local -i.bkp
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
-
-# permission hell
-usermod -a -G www-data rtorrent
-chown -R www-data:rtorrent /home/rtorrent/*
-chown -R rtorrent /home/rtorrent/*
-chmod -R u=rwx,g=rwx /home/rtorrent/*
 
 # setup ufw
 ufw --force enable >> /dev/null
@@ -85,6 +80,4 @@ echo ""
 echo "Username: $user"
 echo "Password: $pass"
 echo "ip: https://$ip:2015"
-echo ""
-echo "dont forget to edit /home/rtorrent/.config/flexget/config.yml for autodl TV"
 echo ""
