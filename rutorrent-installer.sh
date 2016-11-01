@@ -36,7 +36,7 @@ su -c 'mkdir -p $HOME/.config/flexget' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
-chown -R rtorrent /home/rtorrent/.caddy
+chown -R rtorrent /home/rtorrent/.config/*
 chown -R rtorrent /home/rtorrent/www/
 
 # permission hell
