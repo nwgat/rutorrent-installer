@@ -2,7 +2,7 @@
 root /home/rtorrent/www/
         basicauth / user pass
         filemanager /rtdl {
-            show /rtdl
+            show /home/rtorrent/rtdl
             user:
             allow_commands true
             allow_command  rm
