@@ -35,7 +35,7 @@ su -c 'mkdir -p $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/.flexget/' rtorrent
 
 # ruTorrent & php
-su -c 'git clone -q https://github.com/Novik/ruTorrent' rtorrent
+git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/rutorrent
 echo "ruTorrent [OK]"
 
 # configs
