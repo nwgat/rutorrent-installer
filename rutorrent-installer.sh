@@ -53,7 +53,7 @@ git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 echo "ruTorrent [OK]"
 
 # flexget
-crontab -l | { cat; echo "0 0 0 0 0 some entry"; } | crontab -
+su -c 'crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -' rtorrent
 echo "Flexget [OK]
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
