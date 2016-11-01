@@ -50,8 +50,8 @@ chmod -R u=rwx,g=rwx /home/rtorrent/www
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 cp conf/Caddyfile /home/rtorrent/.config/caddy/Caddyfile
 cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
-sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
-sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
+sed -e "s/"user"/"$user"/g" /home/rtorrent/.config/caddy/Caddyfile -i.bkp
+sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.config/caddy/Caddyfile -i.bkp
 
 # ruTorrent & php
 git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
