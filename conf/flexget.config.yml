@@ -1,0 +1,44 @@
+templates:
+  tv:
+    series:
+      settings:
+        webdl:
+          quality: 1080p webdl
+        1080p:
+          quality: 1080p hdtv
+        1080i:
+          quality: 1080i
+        720p:
+          quality: 720p
+
+      webdl:
+        - Last Week Tolate
+
+      1080p:
+        - Limit
+        - NIS:
+            exact: yes
+            begin: S14E01
+
+      1080i:
+        - Silicon Nerf
+
+      720p:
+        - Mega Slippers
+
+    pushover:
+      userkey: ''
+      apikey:  ''
+      title: '{{series_name}}'
+      message: 'Episode {{series_id}}'
+      priority: 2 #Emergency - accepts Jinja2 tags
+
+    rtorrent:
+      uri: scgi://localhost:5000
+      path: /home/rtorrent/rtdl/autodl/{{series_name}}/Season {{series_season}}
+
+tasks:
+  tracker:
+    priority: 1
+    rss: "https://tracker.com/rss.php"
+    template: tv
