@@ -39,11 +39,6 @@ chown -R rtorrent /home/rtorrent/.caddy
 chown -R rtorrent /home/rtorrent/.config/flexget
 chown -R rtorrent /home/rtorrent/www/
 
-# premisison hell
-usermod -a -G www-data rtorrent
-chown -R www-data:rtorrent /home/rtorrent
-chmod -R u=rwx,g=rwx /home/rtorrent/www
-
 # configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
@@ -51,6 +46,11 @@ cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
 cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
+
+# premisison hell
+usermod -a -G www-data rtorrent
+chown -R www-data:rtorrent /home/rtorrent
+chmod -R u=rwx,g=rwx /home/rtorrent/www
 
 # ruTorrent & php
 git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
