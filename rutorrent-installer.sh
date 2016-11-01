@@ -48,6 +48,7 @@ chmod -R u=rwx,g=rwx /home/rtorrent/www
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
+cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
@@ -65,6 +66,7 @@ ufw allow 2015 >> /dev/null
 ufw allow 55950:56000/tcp >> /dev/null
 ufw allow 55950:56000/udp >> /dev/null
 echo "Firewall [OK]"
+
 # allow caddy for port 80
 setcap cap_net_bind_service=+ep /usr/local/bin/caddy
 
