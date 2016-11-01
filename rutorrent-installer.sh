@@ -29,9 +29,10 @@ echo "Caddy [OK]"
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
+su -c 'mkdir -p $HOME/rtdl' rtorrent
+su -c 'mkdir -p $HOME/www' rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.caddy' rtorrent
-su -c 'mkdir -p $HOME/rtdl' rtorrent
 su -c 'mkdir -p $HOME/.config/flexget/' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
