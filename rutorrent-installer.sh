@@ -33,13 +33,13 @@ su -c 'mkdir -p $HOME/rtdl' rtorrent
 su -c 'mkdir -p $HOME/www' rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.caddy' rtorrent
-su -c 'mkdir -p $HOME/.config/flexget/' rtorrent
+su -c 'mkdir -p $HOME/.flexget/' rtorrent
 
 # configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
-cp conf/flexget.yml /home/rtorrent/.config/flexget/config.yml
+cp conf/flexget.yml /home/rtorrent/.flexget/config.yml
 sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
@@ -51,6 +51,10 @@ chmod -R u=rwx,g=rwx /home/rtorrent/www
 # ruTorrent & php
 git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
 echo "ruTorrent [OK]"
+
+# flexget
+crontab -l | { cat; echo "0 0 0 0 0 some entry"; } | crontab -
+echo "Flexget [OK]
 
 # small fixes like starting supvisor on startup and caddy on port 80/443
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/local/bin/caddy' /etc/rc.local -i.bkp
@@ -81,3 +85,4 @@ echo "Username: $user"
 echo "Password: $pass"
 echo "ip: https://$ip:2015"
 echo ""
+echo "remember to edit /home/rtorrent/.flexget/config.yml for automatic tv"
