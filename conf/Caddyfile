@@ -1,9 +1,10 @@
-:80 {
+: {
 root /home/rtorrent/www/
-	basicauth / user pass  
-	browse
-	markdown
-	gzip
-	fastcgi / /run/php/php7.0-fpm.sock php
+        tls self_signed
+        basicauth / user pass
+        browse
+        markdown
+        gzip
+        fastcgi / /run/php/php7.0-fpm.sock php
         status 404 /rtdl
 }
