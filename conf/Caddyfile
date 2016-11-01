@@ -1,10 +1,16 @@
 : {
-root /home/rtorrent/www/
-        tls self_signed
+root /home/user/www/
         basicauth / user pass
-        browse
+        filemanager /rtdl {
+            show /rtdl
+            user:
+            allow_commands true
+            allow_command  rm
+            allow_command  mv
+            allow          dotfiles
+}
+        tls self_signed
         markdown
         gzip
         fastcgi / /run/php/php7.0-fpm.sock php
-        status 404 /rtdl
 }
