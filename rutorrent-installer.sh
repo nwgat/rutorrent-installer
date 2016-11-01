@@ -34,6 +34,7 @@ su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.config/caddy' rtorrent
 su -c 'mkdir -p $HOME/.config/flexget' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
+su -c 'mkdir -p $HOME/www' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
 chown -R rtorrent /home/rtorrent/.config/*
