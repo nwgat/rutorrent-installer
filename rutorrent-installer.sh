@@ -36,15 +36,6 @@ su -c 'mkdir -p $HOME/.config/flexget' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
 su -c 'mkdir -p $HOME/www' rtorrent
 
-chown -R rtorrent /home/rtorrent/.session
-chown -R rtorrent /home/rtorrent/.config/*
-chown -R rtorrent /home/rtorrent/www/
-
-# permission hell
-usermod -a -G www-data rtorrent
-chown -R www-data:rtorrent /home/rtorrent
-chmod -R u=rwx,g=rwx /home/rtorrent/www
-
 # configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
@@ -64,6 +55,12 @@ crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -
 # small fixes like starting supvisor on startup and caddy on port 80/443
 sed '/exit 0/i setcap cap_net_bind_service=+ep /usr/local/bin/caddy' /etc/rc.local -i.bkp
 sed '/exit 0/i supervisord -c /etc/supervisor/supervisord.conf' /etc/rc.local -i.bkp
+
+# permission hell
+usermod -a -G www-data rtorrent
+chown -R www-data:rtorrent /home/rtorrent/*
+chown -R rtorrent /home/rtorrent/*
+chmod -R u=rwx,g=rwx /home/rtorrent/*
 
 # setup ufw
 ufw --force enable >> /dev/null
