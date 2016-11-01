@@ -44,14 +44,8 @@ sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
 # permission hell
-
-chown -R rtorrent /home/rtorrent/.session
-chown -R rtorrent /home/rtorrent/.caddy
-chown -R rtorrent /home/rtorrent/.config/flexget
 chown -R rtorrent /home/rtorrent/www/
-
 usermod -a -G www-data rtorrent
-chown -R www-data:rtorrent /home/rtorrent
 chmod -R u=rwx,g=rwx /home/rtorrent/www
 
 # ruTorrent & php
