@@ -5,5 +5,5 @@ root /home/rtorrent/www/
 	markdown
 	gzip
 	fastcgi / /run/php/php7.0-fpm.sock php
-	rewrite /rtdl { status 403 } 
+        status 404 /rtdl
 }
