@@ -30,7 +30,7 @@ echo "Caddy [OK]"
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
-su -c 'mkdir -p $HOME/www' rtorrent
+su -c 'mkdir -p $HOME/rutorrent' rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.caddy' rtorrent
 su -c 'mkdir -p $HOME/.flexget/' rtorrent
@@ -44,12 +44,12 @@ sed -e "s/"user"/"$user"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
 # permission hell
-chown -R rtorrent /home/rtorrent/www/
 usermod -a -G www-data rtorrent
-chmod -R u=rwx,g=rwx /home/rtorrent/www
+chown -R rtorrent /home/rtorrent/
+chmod -R u=rwx,g=rwx /home/rtorrent/
 
 # ruTorrent & php
-git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/www/rutorrent
+su -c 'git clone -q https://github.com/Novik/ruTorrent /home/rtorrent/rutorrent' rtorrent
 echo "ruTorrent [OK]"
 
 # flexget
