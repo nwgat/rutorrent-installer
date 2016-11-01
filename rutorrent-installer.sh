@@ -32,6 +32,7 @@ echo "Caddy [OK]"
 useradd -m -p --disabled-password -s /bin/bash rtorrent
 su -c 'mkdir -p $HOME/.session/' rtorrent
 su -c 'mkdir -p $HOME/.config/caddy' rtorrent
+su -c 'mkdir -p $HOME/.config/flexget' rtorrent
 su -c 'mkdir -p $HOME/rtdl' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
@@ -86,4 +87,6 @@ echo ""
 echo "Username: $user"
 echo "Password: $pass"
 echo "ip: https://$ip:2015"
+echo ""
+echo "dont forget to edit /home/rtorrent/.config/flexget/config.yml for autodl TV"
 echo ""
