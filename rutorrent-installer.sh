@@ -23,17 +23,26 @@ cp conf/caddy.conf /etc/supervisor/conf.d/
 cp conf/rtorrent.conf /etc/supervisor/conf.d/
 
 # Install caddy
-curl https://getcaddy.com | bash
+#curl https://getcaddy.com | bash
+install caddy /usr/local/bin/caddy
 echo "Caddy [OK]"
 
 # setup rtorrent
 useradd -m -p --disabled-password -s /bin/bash rtorrent
-su -c 'mkdir $HOME/.session/ $HOME/.caddy' rtorrent
-su -c 'mkdir -p $HOME/www/rtdl' rtorrent
+su -c 'mkdir -p $HOME/.session/' rtorrent
+su -c 'mkdir -p $HOME/.caddy' rtorrent
+su -c 'mkdir -p $HOME/rtdl' rtorrent
 
 chown -R rtorrent /home/rtorrent/.session
 chown -R rtorrent /home/rtorrent/.caddy
 chown -R rtorrent /home/rtorrent/www/
+
+# premisison hell
+usermod -a -G www-data rtorrent
+chown -R www-data:rtorrent /home/rtorrent
+chmod -R u=rwx,g=rwx /home/rtorrent/www
+
+# configs
 
 cp conf/rtorrent.rc /home/rtorrent/.rtorrent.rc
 cp conf/Caddyfile /home/rtorrent/.caddy/Caddyfile
@@ -56,12 +65,6 @@ ufw allow 55950:56000/udp >> /dev/null
 echo "Firewall [OK]"
 # allow caddy for port 80
 setcap cap_net_bind_service=+ep /usr/local/bin/caddy
-
-# premisison hell
-usermod -a -G www-data rtorrent
-chown -R www-data:rtorrent /home/rtorrent
-chmod -R u=rwx,g=rwx /home/rtorrent/
-chmod -R u=rwx,g=rwx /home/rtorrent/.caddy/
 
 # start services
 service php7.0-fpm restart
