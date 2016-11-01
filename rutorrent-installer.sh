@@ -9,6 +9,7 @@ read -e user
 echo "rutorrent Password"
 read -e pass
 echo ""
+
 # Install packages
 apt-get update >> /dev/null
 apt-get -qq install php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip ufw python-pip -y >> /dev/null
@@ -48,8 +49,7 @@ sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 
 # permission hell
 usermod -a -G www-data rtorrent
-chown -R rtorrent /home/rtorrent/
-chmod -R u=rwx,g=rwx /home/rtorrent/
+chmod u=rwx,g=rwx -R /home/rtorrent/
 
 # flexget
 su -c 'crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -' rtorrent
