@@ -1,6 +1,7 @@
 a project by
 http://nwgat.ninja
 
+WARNING: use a cleanly installed system, run this on a VPS you can destroy and re-create
 ~work in progress, help me improve it!~
 
 # ruTorrent Installer
