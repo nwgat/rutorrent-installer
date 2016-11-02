@@ -35,7 +35,7 @@ templates:
 
     rtorrent:
       uri: scgi://localhost:5000
-      path: /home/rtorrent/rtdl/autodl/{{series_name}}/Season {{series_season}}
+      path: /home/rtorrent/autodl/{{series_name}}/Season {{series_season}}
 
 tasks:
   tracker:
