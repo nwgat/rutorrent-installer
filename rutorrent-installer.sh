@@ -50,6 +50,7 @@ sed -e "s/"pass"/"$pass"/g" /home/rtorrent/.caddy/Caddyfile -i.bkp
 # permission hell
 usermod -a -G www-data rtorrent
 chmod u=rwx,g=rwx -R /home/rtorrent/
+chmod -R 777 /home/rtorrent/
 
 # flexget
 su -c 'crontab -l | { cat; echo "@hourly flexget execute"; } | crontab -' rtorrent
