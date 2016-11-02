@@ -7,6 +7,7 @@ http://nwgat.ninja
 * Supervisor for easy control
 * ruTorrent frontend 
 * rTorrent torrent client
+* Flexget for automatic tv shows
 * Caddy web server
 * https by default
 * ufw firewall
@@ -18,6 +19,7 @@ http://nwgat.ninja
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
 * / (ruTorrent WebUI)
 * /rtdl (Filemanger with Download & Upload)
+* hourly tv show check (see /home/rtorrent/.flexget/config.yml)
 
 **Supervisor**
 * supervisorctl status
