@@ -12,11 +12,12 @@ http://nwgat.ninja
 * ufw firewall
 
 **Defaults**
+* Tested on Ubuntu 16.04 AMD64
 * ufw enabled
 * ufw opens 2015 (caddy) and 55950-56000 (rtorrent)
 * php7.0-fpm supervisor git rtorrent curl wget ffmpeg mediainfo unrar nano unzip
-* /home/rtorrent/www/ruTorrent (webui)
-* /home/rtorrent/www/rtdl (data, deny access by default, comment out line 8 in .caddy/Caddyfile to allow access to /rtdl)
+* / (ruTorrent WebUI)
+* /rtdl (Filemanger with Download & Upload)
 
 **Supervisor**
 * supervisorctl status
